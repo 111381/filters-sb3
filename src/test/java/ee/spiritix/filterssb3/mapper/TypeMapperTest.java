@@ -1,9 +1,8 @@
-package mapper;
+package ee.spiritix.filterssb3.mapper;
 
 import ee.spiritix.filterssb3.constant.SelectionType;
 import ee.spiritix.filterssb3.dto.FilterDTO;
 import ee.spiritix.filterssb3.entity.Filter;
-import ee.spiritix.filterssb3.mapper.TypeMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

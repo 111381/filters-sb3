@@ -3,5 +3,3 @@ databaseChangeLog:
       file: classpath:schema.sql
   - include:
       file: classpath:db/changelog/changes/add_initial_tables.sql
-  - include:
-      file: classpath:db/changelog/changes/add_filters_to_filters_table.sql
