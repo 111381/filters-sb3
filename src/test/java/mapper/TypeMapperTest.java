@@ -1,5 +1,6 @@
 package mapper;
 
+import ee.spiritix.filterssb3.constant.SelectionType;
 import ee.spiritix.filterssb3.dto.FilterDTO;
 import ee.spiritix.filterssb3.entity.Filter;
 import ee.spiritix.filterssb3.mapper.TypeMapper;
@@ -30,7 +31,7 @@ class TypeMapperTest {
   void testMapObject_Success() {
     // Given
     FilterDTO sourceDto = new FilterDTO();
-    sourceDto.setSelection("Test Selection");
+    sourceDto.setSelection(SelectionType.S1);
     sourceDto.setName("Test Filter");
 
     // When
@@ -56,7 +57,7 @@ class TypeMapperTest {
   void testMapObject_NullTargetClass() {
     // Given
     FilterDTO sourceDto = new FilterDTO();
-    sourceDto.setSelection("Test Selection");
+    sourceDto.setSelection(SelectionType.S1);
 
     // When & Then
     assertThrows(IllegalArgumentException.class, () -> {
@@ -83,7 +84,7 @@ class TypeMapperTest {
   void testMapList_SingleElement() {
     // Given
     FilterDTO dto = new FilterDTO();
-    dto.setSelection("Test Selection");
+    dto.setSelection(SelectionType.S1);
     dto.setName("Single Filter");
     List<FilterDTO> sourceList = List.of(dto);
 
@@ -102,15 +103,15 @@ class TypeMapperTest {
   void testMapList_MultipleElements() {
     // Given
     FilterDTO dto1 = new FilterDTO();
-    dto1.setSelection("Selection 1");
+    dto1.setSelection(SelectionType.S1);
     dto1.setName("Filter 1");
 
     FilterDTO dto2 = new FilterDTO();
-    dto2.setSelection("Selection 2");
+    dto2.setSelection(SelectionType.S2);
     dto2.setName("Filter 2");
 
     FilterDTO dto3 = new FilterDTO();
-    dto3.setSelection("Selection 3");
+    dto3.setSelection(SelectionType.S3);
     dto3.setName("Filter 3");
 
     List<FilterDTO> sourceList = Arrays.asList(dto1, dto2, dto3);
@@ -158,7 +159,7 @@ class TypeMapperTest {
   void testMapObject_ReverseMapping() {
     // Given
     Filter filter = new Filter();
-    filter.setSelection("Test Selection");
+    filter.setSelection(SelectionType.S1);
     filter.setName("Test Filter");
 
     // When
@@ -175,11 +176,11 @@ class TypeMapperTest {
   void testMapList_ReverseMapping() {
     // Given
     Filter filter1 = new Filter();
-    filter1.setSelection("Selection 1");
+    filter1.setSelection(SelectionType.S1);
     filter1.setName("Filter 1");
 
     Filter filter2 = new Filter();
-    filter2.setSelection("Selection 2");
+    filter2.setSelection(SelectionType.S2);
     filter2.setName("Filter 2");
 
     List<Filter> sourceList = Arrays.asList(filter1, filter2);
