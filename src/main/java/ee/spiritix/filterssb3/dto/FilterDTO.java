@@ -1,5 +1,6 @@
 package ee.spiritix.filterssb3.dto;
 
+import ee.spiritix.filterssb3.constant.SelectionType;
 import lombok.Data;
 
 import java.util.List;
@@ -8,6 +9,6 @@ import java.util.List;
 public class FilterDTO {
 
   private String name;
-  private String selection;
+  private SelectionType selection;
   private List<FilterCriteriaDTO> criteriaList;
 }
