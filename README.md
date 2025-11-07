@@ -36,7 +36,7 @@ A Spring Boot 3 application for managing dynamic filters with support for multip
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/111381/filters-sb3.git
    cd filters-sb3
    ```
 
