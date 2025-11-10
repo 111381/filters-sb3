@@ -2,10 +2,12 @@ package ee.spiritix.filterssb3.controller;
 
 import ee.spiritix.filterssb3.dto.FilterDTO;
 import ee.spiritix.filterssb3.service.FilterService;
+import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,6 +32,7 @@ public class FilterController {
 
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
+  @ExceptionHandler(ConstraintViolationException.class)
   public FilterDTO add(@Valid @RequestBody FilterDTO filterDto) {
     return filterService.add(filterDto);
   }
