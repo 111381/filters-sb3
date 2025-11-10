@@ -619,10 +619,10 @@ class FilterServiceIntegrationTest {
         ))
         .build();
 
-    long filterId = filterService.add(filterDTO);
+    FilterDTO filterDtoI = filterService.add(filterDTO);
 
     // When
-    List<FilterableObject> result = filterService.filterObjectsUsingFilterWithId(testObjects, filterId);
+    List<FilterableObject> result = filterService.filterObjectsUsingFilterWithId(testObjects, filterDtoI.getId());
 
     // Then
     assertThat(result).hasSize(1); // Only S2 with amount 250

@@ -14,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 public class FilterDTO {
 
+  private Long id;
   private String name;
   private SelectionType selection;
   private List<FilterCriteriaDTO> criteriaList;

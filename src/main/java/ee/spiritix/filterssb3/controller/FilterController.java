@@ -30,7 +30,7 @@ public class FilterController {
 
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
-  public void add(@Valid @RequestBody FilterDTO filterDto) {
-    filterService.add(filterDto);
+  public FilterDTO add(@Valid @RequestBody FilterDTO filterDto) {
+    return filterService.add(filterDto);
   }
 }

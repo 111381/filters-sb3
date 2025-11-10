@@ -34,12 +34,12 @@ public class FilterService {
     return typeMapper.mapList(filterRepository.findAll(), FilterDTO.class);
   }
 
-  public long add(FilterDTO filterDto) {
+  public FilterDTO add(FilterDTO filterDto) {
     if (filterDto.getCriteriaList() == null || filterDto.getCriteriaList().isEmpty()) {
       throw new IllegalArgumentException("Filter must have at least one criteria");
     }
     Filter filter = (Filter) typeMapper.mapObject(filterDto, Filter.class);
-    return filterRepository.save(filter).getId();
+    return (FilterDTO) typeMapper.mapObject(filterRepository.save(filter), FilterDTO.class);
   }
 
   public List<FilterableObject> filterObjectsUsingFilterWithId(List<FilterableObject> objectsList, Long filterId) {
