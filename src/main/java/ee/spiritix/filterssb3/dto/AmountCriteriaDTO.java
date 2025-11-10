@@ -1,5 +1,6 @@
 package ee.spiritix.filterssb3.dto;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -15,5 +16,6 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 public class AmountCriteriaDTO extends FilterCriteriaDTO {
 
+  @NotNull
   private BigDecimal value;
 }

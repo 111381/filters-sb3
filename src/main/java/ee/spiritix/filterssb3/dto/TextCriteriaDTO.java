@@ -1,5 +1,6 @@
 package ee.spiritix.filterssb3.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -13,5 +14,6 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 public class TextCriteriaDTO extends FilterCriteriaDTO {
 
+  @NotBlank
   private String value;
 }

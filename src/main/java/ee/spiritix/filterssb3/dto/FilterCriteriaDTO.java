@@ -2,6 +2,7 @@ package ee.spiritix.filterssb3.dto;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
@@ -26,6 +27,8 @@ import static ee.spiritix.filterssb3.constant.FilterCriteriaTypes.TEXT;
 @NoArgsConstructor
 public abstract class FilterCriteriaDTO {
 
+  @NotBlank
   private String filterType;
+  @NotBlank
   private String conditionType;
 }

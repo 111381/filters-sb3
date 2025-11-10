@@ -2,6 +2,7 @@ package ee.spiritix.filterssb3.controller;
 
 import ee.spiritix.filterssb3.dto.FilterDTO;
 import ee.spiritix.filterssb3.service.FilterService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -29,7 +30,7 @@ public class FilterController {
 
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
-  public void add(@RequestBody FilterDTO filterDto) {
+  public void add(@Valid @RequestBody FilterDTO filterDto) {
     filterService.add(filterDto);
   }
 }
