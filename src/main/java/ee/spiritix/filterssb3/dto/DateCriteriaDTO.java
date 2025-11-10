@@ -1,21 +1,19 @@
 package ee.spiritix.filterssb3.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@Builder
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 public class DateCriteriaDTO extends FilterCriteriaDTO {
 
-  private String filterType;
-  private String conditionType;
   private LocalDate value;
 }
