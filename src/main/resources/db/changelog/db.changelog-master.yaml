@@ -1,5 +1,5 @@
 databaseChangeLog:
   - include:
-      file: classpath:schema.sql
+      file: classpath:db/changelog/changes/add-initial-schema.sql
   - include:
       file: classpath:db/changelog/changes/add_initial_tables.sql
